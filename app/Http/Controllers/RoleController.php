@@ -23,7 +23,12 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         if( $request->ajax() ){
-            $role = Role::firstOrNew(['id' => $request['rid']]);
+            // $role = Role::firstOrNew(['id' => $request['rid']]);
+            $role = Role::find($request['rid']);
+            if( !$role ){
+                $role = new Role;
+            }
+            
             $role->name = $request['rnm'];
             $role->status = $request['rst'];
             $role->save();
@@ -53,6 +58,8 @@ class RoleController extends Controller
 
     public function destroy(Role $role)
     {
-        //
+        echo "hello";
+
+        return back();
     }
 }

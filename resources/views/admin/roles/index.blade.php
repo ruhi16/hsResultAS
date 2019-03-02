@@ -36,6 +36,7 @@
 				<td>{{ $role->name }}</td>
 				<td>{{ $role->status }}</td>
 				<td>
+						<a href="" class="btn btn-warning btn-xs" >Preview</a>
 						<a class="btn btn-info btn-xs myUpdateButton" id="myButton"
 								data-toggle="modal" 
 								data-target="#myModal" 
@@ -43,7 +44,10 @@
 								data-name = "{{ $role->name }}"
 								data-status = "{{ $role->status }}" 
 								>Update</a>
-					{{--  <button class="btn btn-primary" data-datac="{{ $role->name }}">Try it</button>  --}}
+						{!! Form::open(['method'=>'DELETE', 'route'=>['roles.destroy', $role], 'style'=>'display:inline']) !!}                                        
+                        	{{ Form::submit('Delete', array('class' => 'btn btn-danger btn-xs')) }}                    
+                    	{{ Form::close() }}
+						{{--  <a href="{{ route('roles.destroy', ['role' => $role])}}" class="btn btn-danger btn-xs" >Delete</a>  --}}
 				</td>
 			</tr>
 			@endforeach
@@ -82,7 +86,7 @@
 							<div class="col-lg-2">
 								<div class="input-group input-group-sm">
 									<span class="input-group-addon" id="sizing-addon3">id</span>											
-								<input type="text" class="form-control" name="id" id="id" aria-label="..." placeholder="Enter id..." >
+								<input type="text" class="form-control" name="id" id="id" aria-label="..." placeholder="id" readonly>
 								</div><!-- /input-group -->
 							</div><!-- /.col-lg-6 -->
 
@@ -96,7 +100,7 @@
 							<div class="col-lg-4">
 								<div class="input-group input-group-sm">
 									<span class="input-group-addon" id="sizing-addon3">Status</span>											
-									<input type="text" class="form-control" name="st" id="st" aria-label="..." placeholder="Enter name...">
+									<input type="text" class="form-control" name="st" id="st" aria-label="..." placeholder="Enter status...">
 								</div><!-- /input-group -->
 							</div><!-- /.col-lg-6 -->
 						</div><!-- /.row -->
