@@ -13,7 +13,7 @@
 @section('body-content-content')
 	{{-- @include('admin.layouts.content') --}}
 
-	hello
+	<a href="{{ route('roles.index') }}" class="btn btn-warning">Roles</a>
 
 <script type="text/javascript">
 	$(document).ready(function(e){

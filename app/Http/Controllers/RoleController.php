@@ -22,7 +22,18 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
-        //
+        if( $request->ajax() ){
+            $role = Role::firstOrNew(['id' => $request['rid']]);
+            $role->name = $request['rnm'];
+            $role->status = $request['rst'];
+            $role->save();
+
+            return response()->json(['data' => 'Success',
+                                     'nm' => $request['rnm'],
+                                     'st' => $request['rst']
+                                    ]);
+        }        
+        return response()->json(['data' => 'Not Success, Http Request..']);
     }
 
     public function show(Role $role)
