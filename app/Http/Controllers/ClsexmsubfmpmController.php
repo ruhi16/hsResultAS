@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Clsexmsubfmpf;
+use App\Clsexmsubfmpm;
 use Illuminate\Http\Request;
 
-class ClsexmsubfmpfController extends Controller
+class ClsexmsubfmpmController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -15,6 +15,10 @@ class CreateStudentcrsubjectsTable extends Migration
     {
         Schema::create('studentcrsubjects', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('studentcr_id');
+            $table->unsignedInteger('subject_id');
+            $table->string('status');
+            $table->unsignedInteger('session_id');
             $table->timestamps();
         });
     }

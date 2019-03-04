@@ -18,7 +18,7 @@ class CreateSessionsTable extends Migration
             $table->string('name');
             $table->date('stdate');
             $table->date('endate');
-            $table->unsignedinteger('next_session_id')->nullable();
+            $table->unsignedInteger('next_session_id')->nullable();
             $table->boolean('status')->nullable();
             $table->timestamps();
         });

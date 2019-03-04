@@ -15,6 +15,10 @@ class CreateClssexamsTable extends Migration
     {
         Schema::create('clssexams', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('clss_id');
+            $table->unsignedInteger('exam_id');
+            $table->string('status');
+            $table->unsignedInteger('session_id');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMarksentriesTable extends Migration
+class CreateClsexmsubfmpmsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateMarksentriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('marksentries', function (Blueprint $table) {
+        Schema::create('clsexmsubfmpms', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('studentcr_id');
-            $table->unsignedInteger('clsexmsubfmpm_id');
+            $table->unsignedInteger('clssexam_id');
+            $table->unsignedInteger('clsssubject_id');
+            $table->string('name');
+            $table->integer('fullmarks');
+            $table->integer('passmarks');
             $table->string('status');
             $table->unsignedInteger('session_id');
             $table->timestamps();
@@ -30,6 +33,6 @@ class CreateMarksentriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('marksentries');
+        Schema::dropIfExists('clsexmsubfmpms');
     }
 }

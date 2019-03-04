@@ -16,7 +16,7 @@ class CreateClssesTable extends Migration
         Schema::create('clsses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
-            $table->unsignedinteger('next_clss_id')->nullable();
+            $table->unsignedInteger('next_clss_id')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

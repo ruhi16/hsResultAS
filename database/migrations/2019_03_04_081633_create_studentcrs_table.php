@@ -15,6 +15,11 @@ class CreateStudentcrsTable extends Migration
     {
         Schema::create('studentcrs', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('studentdb_id');
+            $table->unsignedInteger('clss_id');
+            $table->integer('roll_no');
+            $table->string('status');
+            $table->unsignedInteger('session_id');
             $table->timestamps();
         });
     }

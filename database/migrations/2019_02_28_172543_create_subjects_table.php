@@ -18,7 +18,7 @@ class CreateSubjectsTable extends Migration
             $table->string('name');
             $table->string('shname');
             $table->string('status');
-            $table->unsignedinteger('session_id');
+            $table->unsignedInteger('session_id');
             $table->timestamps();
         });
     }

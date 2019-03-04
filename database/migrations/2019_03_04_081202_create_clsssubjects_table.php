@@ -15,6 +15,10 @@ class CreateClsssubjectsTable extends Migration
     {
         Schema::create('clsssubjects', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('subject_id');
+            $table->unsignedInteger('clss_id');
+            $table->string('status');
+            $table->unsignedInteger('session_id');
             $table->timestamps();
         });
     }

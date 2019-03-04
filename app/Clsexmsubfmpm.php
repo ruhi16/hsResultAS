@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Clsexmsubfmpf extends Model
+class Clsexmsubfmpm extends Model
 {
     //
 }

@@ -15,6 +15,10 @@ class CreateSubjectteachersTable extends Migration
     {
         Schema::create('subjectteachers', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('subject_id');
+            $table->unsignedInteger('teacher_id');
+            $table->string('status');
+            $table->unsignedInteger('session_id');
             $table->timestamps();
         });
     }

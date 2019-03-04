@@ -15,6 +15,9 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('studentcr_id');
+            $table->unsignedInteger('total_marks');
+            $table->string('grade');
             $table->timestamps();
         });
     }
