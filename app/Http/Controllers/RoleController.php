@@ -26,13 +26,13 @@ class RoleController extends Controller
         
 
         if( $request->ajax() ){
-            // $validator = \Validator::make($request->all(), [                
-            //     'rnm' => 'required',
-            //     'rst' => 'required',            
-            // ]);
-            // if ($validator->fails()){
-            //     return response()->json(['errors'=>$validator->errors()->all()]);
-            // }
+            $validator = \Validator::make($request->all(), [                
+                'rnm' => 'required',
+                'rst' => 'required',            
+            ]);
+            if ($validator->fails()){
+                return response()->json(['errors'=>$validator->errors()->all()]);
+            }
 
             // $role = Role::firstOrNew(['id' => $request['rid']]);
             $role = Role::find($request['rid']);

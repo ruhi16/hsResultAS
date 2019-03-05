@@ -158,11 +158,12 @@
 		      	data: {rid: id, rnm: nm, rst: st, _token: t},
 		      	success: function(msg){	    			            
 		            console.log("Message: "+msg['data']+", name: " + msg['nm']+', status: '+msg['st']);
+					console.log(msg.errors);
+		    	},
+		    	error: function (data) {
 					if (data.errors){
 						console.log('Validation Errors: '+ data)
 					}
-		    	},
-		    	error: function (data) {
 					console.log('Normal Errors: ', data);
 	            }
 			}); //end of ajax 
