@@ -22,12 +22,25 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
+
+        
+
         if( $request->ajax() ){
+            // $validator = \Validator::make($request->all(), [                
+            //     'rnm' => 'required',
+            //     'rst' => 'required',            
+            // ]);
+            // if ($validator->fails()){
+            //     return response()->json(['errors'=>$validator->errors()->all()]);
+            // }
+
             // $role = Role::firstOrNew(['id' => $request['rid']]);
             $role = Role::find($request['rid']);
             if( !$role ){
                 $role = new Role;
             }
+
+
             
             $role->name = $request['rnm'];
             $role->status = $request['rst'];
@@ -58,8 +71,9 @@ class RoleController extends Controller
 
     public function destroy(Role $role)
     {
-        echo "hello";
-
+        // echo "hello";
+        // dd($role);
+        $role->delete();
         return back();
     }
 }
